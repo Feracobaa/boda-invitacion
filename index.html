@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitacion de Boda</title>
+    <link rel="stylesheet" href="Efectos.css">
+</head>
+<body>
+    <audio id="bgMusic" loop preload="auto">
+        <source src="musica/Fonseca - Por Toda la Vida (Letra).mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="page hero" id="portada">
+        <img src="Fotos/FT1.jpeg" alt="Portada de invitacion de boda">
+        <div class="veil veil-top"></div>
+        <div class="veil veil-bottom"></div>
+        <div class="center-line"></div>
+        <a href="#invitacion" class="btn-round"><span class="label">Abrir</span></a>
+    </section>
+
+    <main class="content" id="invitacion">
+        <section class="panel principal">
+            <p class="overline">Con la bendicion de Dios y de nuestros padres</p>
+            <h1 class="couple">Leonardo y Dilia<br><span>&</span><br>Enrique y Liliana</h1>
+            <p class="invite-text">Tenemos el honor de invitarte a celebrar nuestra boda.</p>
+            <h2 class="date-title">15 de diciembre</h2>
+            <p class="countdown-label">Faltan</p>
+            <section class="countdown-pill" aria-label="Contador de tiempo para la boda">
+                <article class="pill-item">
+                    <p id="countdownDays" class="pill-number">--</p>
+                    <p class="pill-label">Dias</p>
+                </article>
+                <article class="pill-item">
+                    <p id="countdownHours" class="pill-number">--</p>
+                    <p class="pill-label">Hrs</p>
+                </article>
+                <article class="pill-item">
+                    <p id="countdownMinutes" class="pill-number">--</p>
+                    <p class="pill-label">Mins</p>
+                </article>
+                <article class="pill-item">
+                    <p id="countdownSeconds" class="pill-number">--</p>
+                    <p class="pill-label">Segs</p>
+                </article>
+            </section>
+
+            <article class="calendar-card" aria-label="Calendario de la boda">
+                <p class="calendar-month">Diciembre</p>
+                <p class="calendar-day">15</p>
+                <p class="calendar-year">2026</p>
+            </article>
+        </section>
+
+        <section class="panel event">
+            <div class="floral-corner floral-left"></div>
+            <div class="floral-corner floral-right"></div>
+            <div class="lottie-icon ceremony-icon" data-lottie-key="iglesia" aria-label="Icono de iglesia"></div>
+            <h3>Ceremonia</h3>
+            <p>Parroquia Divino Nino Jesus</p>
+            <p>Calle 14A con Carrera 32, Barrio Galicia, Santa Marta</p>
+            <p class="pending">Hora: pendiente por confirmar</p>
+            <div class="map-embed" id="mapCeremonia" hidden aria-label="Mapa de la ceremonia">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317.5084768603669!2d-74.1793468299893!3d11.240505159222103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f504e65c04ef%3A0xfc7e3bf02d98ec1!2sParroquia%20Divino%20Ni%C3%B1o%20Jes%C3%BAs-%20Galicia!5e1!3m2!1ses!2sco!4v1778878047036!5m2!1ses!2sco" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <button class="btn btn-map" type="button" data-target-map="mapCeremonia">Ver mapa ceremonia</button>
+        </section>
+
+        <section class="panel event">
+            <div class="floral-corner floral-left"></div>
+            <div class="floral-corner floral-right"></div>
+            <div class="lottie-icon" data-lottie-key="copas" aria-label="Icono de copas"></div>
+            <h3>Recepcion</h3>
+            <p>Salon de eventos Hotel Catedral Plaza</p>
+            <p>Calle 16 # 5-17, Santa Marta</p>
+            <p class="pending">Hora: pendiente por confirmar</p>
+            <div class="map-embed" id="mapRecepcion" hidden aria-label="Mapa de la recepcion">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5080.091634235193!2d-74.21269933916662!3d11.243001608678304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f57b34d50d59%3A0x41c85093c767589e!2sHotel%20Catedral%20Plaza!5e1!3m2!1ses!2sco!4v1778878080647!5m2!1ses!2sco" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <button class="btn btn-map" type="button" data-target-map="mapRecepcion">Ver mapa recepcion</button>
+        </section>
+
+        <section class="panel dresscode">
+            <h3>Codigo de vestimenta</h3>
+            <p><strong>Damas:</strong> estilo formal, vestido largo.</p>
+            <p><strong>Reservar el color blanco.</strong></p>
+            <p><strong>Caballeros:</strong> traje formal sin corbata.</p>
+        </section>
+
+        <section class="panel song">
+            <div class="lottie-icon lottie-small" data-lottie-key="camara" aria-label="Icono de camara"></div>
+            <h3>Nuestra cancion</h3>
+            <p>Por toda la vida - Fonseca</p>
+            <audio controls preload="none">
+                <source src="por-toda-la-vida-fonseca.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+            <p class="pending">Para que suene aqui, agrega el archivo MP3 en esta carpeta con ese nombre.</p>
+        </section>
+
+        <section class="panel confirmacion">
+            <div class="lottie-icon lottie-small" data-lottie-key="wasa" aria-label="Icono de WhatsApp"></div>
+            <h3>Confirmacion de asistencia</h3>
+            <p>Confirmanos directamente por WhatsApp.</p>
+            <a class="btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/573006464298?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20del%2015%20de%20diciembre">Confirmar por WhatsApp</a>
+            <p class="deadline">Fecha limite de confirmacion: 30 de octubre</p>
+        </section>
+    </main>
+
+    <script src="Elementos/lotties-data.js?v=2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script>
+        (function () {
+            function pad(n) {
+                return String(n).padStart(2, '0');
+            }
+
+            function updateCountdown() {
+                var now = new Date();
+                var target = new Date(now.getFullYear(), 11, 15, 0, 0, 0, 0);
+                if (now > target) {
+                    target = new Date(now.getFullYear() + 1, 11, 15, 0, 0, 0, 0);
+                }
+
+                var diffMs = Math.max(0, target.getTime() - now.getTime());
+                var days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+                var minutes = Math.floor((diffMs / (1000 * 60)) % 60);
+                var seconds = Math.floor((diffMs / 1000) % 60);
+
+                var daysEl = document.getElementById('countdownDays');
+                var hoursEl = document.getElementById('countdownHours');
+                var minutesEl = document.getElementById('countdownMinutes');
+                var secondsEl = document.getElementById('countdownSeconds');
+
+                if (daysEl) daysEl.textContent = days;
+                if (hoursEl) hoursEl.textContent = pad(hours);
+                if (minutesEl) minutesEl.textContent = pad(minutes);
+                if (secondsEl) secondsEl.textContent = pad(seconds);
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            var panels = document.querySelectorAll('.panel');
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            panels.forEach(function (panel, index) {
+                panel.style.transitionDelay = (index * 0.08) + 's';
+                observer.observe(panel);
+            });
+
+            var openBtn = document.querySelector('.btn-round');
+            var hero = document.querySelector('.hero');
+            if (openBtn && hero) {
+                openBtn.addEventListener('click', function (ev) {
+                    ev.preventDefault();
+                    var bgMusic = document.getElementById('bgMusic');
+                    if (bgMusic) {
+                        bgMusic.volume = 0.35;
+                        bgMusic.play().catch(function () {});
+                    }
+                    hero.classList.add('opening');
+                    setTimeout(function () {
+                        var targetSection = document.getElementById('invitacion');
+                        if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 950);
+                });
+            }
+
+            function initLotties() {
+                if (!window.lottie) return;
+                var lottieNodes = document.querySelectorAll('[data-lottie-key]');
+                lottieNodes.forEach(function (node) {
+                    var key = node.getAttribute('data-lottie-key');
+                    if (!key || !window.LOTTIE_DATA || !window.LOTTIE_DATA[key]) return;
+                    window.lottie.loadAnimation({
+                        container: node,
+                        renderer: 'svg',
+                        loop: true,
+                        autoplay: true,
+                        animationData: window.LOTTIE_DATA[key]
+                    });
+                });
+            }
+
+            initLotties();
+
+            var mapButtons = document.querySelectorAll('.btn-map');
+            mapButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var mapId = btn.getAttribute('data-target-map');
+                    if (!mapId) return;
+                    var mapBox = document.getElementById(mapId);
+                    if (!mapBox) return;
+
+                    var willShow = mapBox.hasAttribute('hidden');
+                    if (willShow) {
+                        mapBox.removeAttribute('hidden');
+                        btn.textContent = 'Ocultar mapa';
+                        mapBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        mapBox.setAttribute('hidden', '');
+                        btn.textContent = mapId === 'mapCeremonia' ? 'Ver mapa ceremonia' : 'Ver mapa recepcion';
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
+
