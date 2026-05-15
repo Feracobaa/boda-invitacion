@@ -84,6 +84,34 @@ body {
     object-fit: cover;
 }
 
+.hero-slider {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: heroSwap 20s infinite;
+}
+
+.hero-slider img:nth-child(1) { animation-delay: 0s; }
+.hero-slider img:nth-child(2) { animation-delay: 5s; }
+.hero-slider img:nth-child(3) { animation-delay: 10s; }
+.hero-slider img:nth-child(4) { animation-delay: 15s; }
+
+@keyframes heroSwap {
+    0% { opacity: 0; }
+    7% { opacity: 1; }
+    23% { opacity: 1; }
+    30% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
 .hero .veil {
     position: absolute;
     left: 0;
@@ -304,6 +332,28 @@ body {
     color: #9e8467;
 }
 
+.main-gallery {
+    margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-rows: 160px 160px;
+    gap: 10px;
+    width: min(760px, 100%);
+}
+
+.main-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid #eaded5;
+    box-shadow: 0 6px 16px rgba(115, 93, 70, 0.16);
+}
+
+.main-gallery img:first-child {
+    grid-row: 1 / span 2;
+}
+
 .panel h3 {
     margin: 0 0 8px;
     font-size: clamp(38px, 7vw, 56px);
@@ -406,6 +456,22 @@ body {
     display: block;
 }
 
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.album-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #eaded5;
+    box-shadow: 0 6px 14px rgba(115, 93, 70, 0.14);
+}
+
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 20px rgba(117, 91, 54, 0.3);
@@ -443,5 +509,18 @@ body {
         width: 116px;
         height: 116px;
         font-size: 30px;
+    }
+
+    .main-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 160px);
+    }
+
+    .main-gallery img:first-child {
+        grid-row: auto;
+    }
+
+    .album-grid img {
+        height: 150px;
     }
 }
