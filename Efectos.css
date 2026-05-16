@@ -215,6 +215,11 @@ body {
     transform: translateY(0);
 }
 
+.panel > * {
+    position: relative;
+    z-index: 1;
+}
+
 .principal {
     background: linear-gradient(180deg, #fffdfb, #f8f1ec);
 }
@@ -303,33 +308,66 @@ body {
 
 .calendar-card {
     margin: 20px auto 6px;
-    width: min(280px, 70vw);
-    border: 2px solid var(--gold);
+    width: min(760px, 95%);
+    border: 1px solid #e8ddd3;
     border-radius: 18px;
     background: #fff;
-    overflow: hidden;
+    padding: 12px 12px 16px;
 }
 
 .calendar-month {
-    margin: 0;
-    padding: 10px;
-    background: var(--gold);
-    color: #fff;
-    font-size: 28px;
-    letter-spacing: 0.7px;
-}
-
-.calendar-day {
-    margin: 0;
-    font-size: 78px;
-    line-height: 1.05;
-    color: #6d5642;
-}
-
-.calendar-year {
     margin: 0 0 12px;
-    font-size: 32px;
-    color: #9e8467;
+    text-align: center;
+    color: #a47f54;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 600;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+.calendar-grid span {
+    font-size: clamp(21px, 2.8vw, 30px);
+    color: #3f3a36;
+    min-height: 32px;
+}
+
+.calendar-grid .weekday {
+    color: #5abed1;
+    font-weight: 700;
+}
+
+.calendar-grid .weekend {
+    color: #66c4d5;
+}
+
+.calendar-grid .muted {
+    color: #c8c0ba;
+}
+
+.day-heart-wrap {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    margin: 0 auto;
+}
+
+.day-heart-lottie {
+    position: absolute;
+    inset: -18px;
+    opacity: 0.85;
+}
+
+.day-heart-number {
+    position: relative;
+    z-index: 2;
+    color: #57bbce;
+    font-weight: 700;
 }
 
 
@@ -360,35 +398,80 @@ body {
     margin-bottom: 14px;
 }
 
-.floral-corner {
+.dresscode-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 4px auto 8px;
+}
+
+.dresscode-icon {
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.78;
+    filter: sepia(0.32) saturate(0.72);
+}
+
+.heart-field {
     position: absolute;
-    width: 110px;
-    height: 110px;
+    inset: 0;
+    z-index: 0;
     pointer-events: none;
-    opacity: 0.9;
+    overflow: hidden;
 }
 
-.floral-left {
-    left: -22px;
-    top: -8px;
-    background:
-        radial-gradient(circle at 28% 34%, #f4b8be 0 18px, transparent 19px),
-        radial-gradient(circle at 46% 17%, #f7c9ce 0 12px, transparent 13px),
-        radial-gradient(circle at 58% 52%, #e5aab2 0 10px, transparent 11px),
-        radial-gradient(ellipse at 66% 78%, #7e9b75 0 12px, transparent 13px),
-        radial-gradient(ellipse at 82% 60%, #9cb08f 0 10px, transparent 11px);
+.heart-orbit {
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    opacity: 0.16;
 }
 
-.floral-right {
-    right: -18px;
-    bottom: -12px;
-    transform: scaleX(-1);
-    background:
-        radial-gradient(circle at 28% 34%, #f4b8be 0 18px, transparent 19px),
-        radial-gradient(circle at 46% 17%, #f7c9ce 0 12px, transparent 13px),
-        radial-gradient(circle at 58% 52%, #e5aab2 0 10px, transparent 11px),
-        radial-gradient(ellipse at 66% 78%, #7e9b75 0 12px, transparent 13px),
-        radial-gradient(ellipse at 82% 60%, #9cb08f 0 10px, transparent 11px);
+.heart-lottie {
+    width: 100%;
+    height: 100%;
+}
+
+.heart-orbit.h1 {
+    top: 8%;
+    left: 6%;
+    animation: heartDriftA 18s linear infinite;
+}
+
+.heart-orbit.h2 {
+    top: 62%;
+    left: 78%;
+    animation: heartDriftB 22s linear infinite;
+}
+
+.heart-orbit.h3 {
+    top: 36%;
+    left: 42%;
+    width: 60px;
+    height: 60px;
+    opacity: 0.12;
+    animation: heartDriftC 20s linear infinite;
+}
+
+@keyframes heartDriftA {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(24px, 18px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes heartDriftB {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-20px, -16px) rotate(-180deg); }
+    100% { transform: translate(0, 0) rotate(-360deg); }
+}
+
+@keyframes heartDriftC {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(14px, -12px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
 }
 
 .panel p {
